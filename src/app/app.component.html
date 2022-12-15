@@ -1,3 +1,47 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-content>
+    <ion-menu-toggle>
+      <ion-button expand="full"></ion-button>
+    </ion-menu-toggle>
+  </ion-content>
+
+  <ion-menu  contentId="main" [type]="menuType">
+    <ion-header>
+      <ion-toolbar color="medium-tint">
+        <ion-title><img src="../assets/images/WK-Mobile-Logo.png"></ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>Patient Services</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-list>
+                  <ion-menu-toggle>
+                    <ion-item *ngFor="let item of menuItems; trackBy:trackItems">
+                        <a href="{{ item.route }}">
+                          <ion-label>{{ item.name }}</ion-label>
+                        </a>
+                    </ion-item>
+                  </ion-menu-toggle>
+                </ion-list>
+              </div>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Employee Resources</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                Log In
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

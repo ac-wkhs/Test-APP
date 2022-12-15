@@ -1,20 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content>
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-grid>
+        <ion-row style="margin-top: 15px; margin-bottom: 15px;">
+          <ion-buttons>
+            <ion-menu-button slot="start"></ion-menu-button>
+          </ion-buttons>
+          <ion-title><img alt="logo" height="42"   src="../../assets/images/WK-Mobile-Logo.png" ></ion-title>
+        </ion-row>
+      </ion-grid>    
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Welcome to Willis-Knighton!</ion-card-title>
+      <ion-card-content>Log in to make the most of this <a href="/">app</a>!</ion-card-content>
+    </ion-card-header>
+    
+  </ion-card>
 </ion-content>

@@ -1,0 +1,201 @@
+{
+  "name": "beta",
+  "appHubUrl": "https://azapp-wapi-employee-app-dev.azurewebsites.net/hubs/app",
+  "production": false,
+  "appControllerBaseURi": "https://azapp-wapi-employee-app-dev.azurewebsites.net/api/app",
+  "fairServiceBaseUri": "https://azapp-wapi-employee-app-dev.azurewebsites.net/api/fair-day",
+  "ajaxLogUri": "https://azapp-wapi-employee-app-dev.azurewebsites.net/jsnlog.logger",
+  "cafeteriaMenuBaseUri": "https://azapp-wapi-employee-app-dev.azurewebsites.net/api/cafe",
+  "wkTodayBaseUri": "https://azapp-wapi-employee-app-dev.azurewebsites.net/api/proxy/wktoday",
+  "employeeEventsBaseUri": "https://azapp-wapi-employee-app-dev.azurewebsites.net/api/employee-events",
+  "patientCheckinBaseUri": "https://azapp-wapi-employee-app-dev.azurewebsites.net/api/pt-checkin",
+  "defaultUri": "home",
+  "azureMapsAuth": {
+    "authType": "subscriptionKey",
+    "subscriptionKey": "aDw6sSottgYUMXEXxKCuNlGPi7JoSMOjeoKAeJO-Gss"
+  },
+  "oAuth2ClientConfig": {
+    "appId": "b443583b-830f-4d87-9fbe-2d3f00636410",
+    "authorizationBaseUrl": "https://login.microsoftonline.com/89bd5309-0ad6-4b97-9c35-5057575e430a/oauth2/v2.0/authorize",
+    "accessTokenEndpoint": "https://login.microsoftonline.com/89bd5309-0ad6-4b97-9c35-5057575e430a/oauth2/v2.0/token",
+    "resourceUrl": "",
+    "scope": "offline_access api://b443583b-830f-4d87-9fbe-2d3f00636410/fair-day.edit",
+    "pkceEnabled": true,
+    "responseType": "code",
+    "web": {
+      "redirectUrl": "https://azapp-wapi-employee-app-dev.azurewebsites.net/home",
+      "windowOptions": "height=600,left=0,top=0"
+    },
+    "android": {
+      "redirectUrl": "com.wkhs.employee.app://home"
+    },
+    "ios": {
+      "redirectUrl": "com.wkhs.employee.app://home"
+    }
+  },  
+  "help": {
+    "helpDeskNumber": "318-212-4765",
+    "faq" :[
+      { 
+        "title": "I am recieving error messages", 
+        "content":"Most of the app's functionality requires real time contact with cloud services so please ensure you have wifi or cellular connection active while using the app." 
+      },
+      { 
+        "title": "Encounter an error?", 
+        "content":"If you have already ensured you have an active internet connection please take a screen shot and attach it to an email with the Subject Line=\"error\" and in the body please add a description of what you were attempting to do and send it to <a href=\"mailto:app.store@wkhs.com?subject=error\">app.store@wkhs.com</a>. The more information the better as it will help us discover the problem faster and get a fix out to you asap!" 
+      },
+      { 
+        "title": "Have an idea for an improvement?", 
+        "content": "We would love to hear your ideas! Shoot us an email with the Subject Line=\"idea\" <a href=\"mailto:app.store@wkhs.com?subject=idea\">app.store@wkhs.com</a>."
+      },
+      { 
+        "title": "Require faster support?", 
+        "content": "Please contact the Help Desk at <a href=\"tel:318-212-4765\">318-212-4765</a>"
+      }
+    ]
+  },
+  "appModules": [
+    {
+      "name": "mobile-checkin-config",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "construct-outline",
+      "menuLink": "/checkin/config",
+      "linkText": "Mobile Checkin Config",
+      "requiredRole": "mobile-checkin.config.edit"
+    },
+    {
+      "name": "fair-day",
+      "enabled": false,
+      "disabledMessage": "Fair day registration is currently closed - please check back closer to Fair Day!",
+      "visibleOnHome": false,
+      "visibleOnHamburger": false,
+      "iconName": "happy",
+      "menuLink": "/fair-day",
+      "linkText": "Fair Day"
+    },
+    {
+      "name": "check-in",
+      "enabled": false,
+      "disabledMessage": "",
+      "visibleOnHome": false,
+      "visibleOnHamburger": false,
+      "iconName": "md-at-location",
+      "menuLink": "/check-in/find-event",
+      "linkText": "Check-In"
+    },
+    { 
+      "name": "news",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "newspaper",
+      "menuLink": "/wktoday/news",
+      "linkText": "News"
+    },
+    {
+      "name": "announcements",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "megaphone",
+      "menuLink": "/wktoday/announcements",
+      "linkText": "Announcements"
+    },
+    {
+      "name": "covid-blog",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "book",
+      "menuLink": "/wktoday/blog-posts;parentId=5be7c73b-d7cd-4550-91e9-37a7169e01cd;Title=Covid-19 Blog",
+      "linkText": "COVID Blog"
+    },
+    {
+      "name": "cafeteria-menu",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "fast-food",
+      "menuLink": "/cafeteria/menu",
+      "linkText": "Cafeteria Menu",
+      "public": true
+    },
+    {
+      "name": "anniversaries",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "calendar",
+      "menuLink": "/employee-events/anniversaries",
+      "linkText": "Anniversaries"
+    },
+    {
+      "name": "new-hires",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "person-add",
+      "menuLink": "/employee-events/new-hires",
+      "linkText": "New Hires"
+    },
+    {
+      "name": "family-concerns",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "chatbubbles",
+      "menuLink": "/employee-events/family-concerns",
+      "linkText": "Family Concerns"
+    },
+    {
+      "name": "open-enrollment-blog",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "umbrella",
+      "menuLink": "/wktoday/blog-posts;parentId=047b2a83-586e-4af6-b375-0d18a5c3bb39;Title=Open Enrollment Info;SummaryOnly=True",
+      "linkText": "Open Enrollment Info"
+    },
+    {
+      "name": "patient-portal",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "medkit",
+      "menuLink": {
+        "ios": {
+          "appId": "id1336516464"
+        },
+        "android": {
+           "appId": "ic.mobile.pap"
+        },
+        "web": "https://patientportal.intelichart.com/login/Account/Login" 
+      },
+      "linkText": "Patient Portal",
+      "public": true
+    },
+    {
+      "name": "public-covid-blog",
+      "enabled": true,
+      "disabledMessage": "",
+      "visibleOnHome": true,
+      "visibleOnHamburger": true,
+      "iconName": "information",
+      "menuLink": "/wktoday/details;type=blog;id=260e3140-39e4-4a71-bc74-87abdfa1703d",
+      "linkText": "COVID Visitation Policy",
+      "public": true
+    }
+  ]
+}
