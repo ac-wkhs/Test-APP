@@ -11,20 +11,32 @@
         <ion-title><img src="../assets/images/WK-Mobile-Logo.png"></ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
-      <ion-list>
+    <ion-content color="light-tint">
+      <ion-list color="light-tint">
           <ion-accordion-group>
             <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>Home</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-list [inset]="false">
+                  <ion-menu-toggle>
+                    <ion-item color="light" href="/home">
+                        <ion-label>Home</ion-label>
+                    </ion-item>
+                  </ion-menu-toggle>
+                </ion-list>
+              </div>
+            </ion-accordion>
+            <ion-accordion value="second" color="light">
               <ion-item slot="header" color="light">
                 <ion-label>Patient Services</ion-label>
               </ion-item>
               <div class="ion-padding" slot="content">
-                <ion-list>
+                <ion-list [inset]="false">
                   <ion-menu-toggle>
-                    <ion-item *ngFor="let item of menuItems; trackBy:trackItems">
-                        <a href="{{ item.route }}">
+                    <ion-item *ngFor="let item of menuItems; trackBy:trackItems" color="light" href="{{ item.route }}">
                           <ion-label>{{ item.name }}</ion-label>
-                        </a>
                     </ion-item>
                   </ion-menu-toggle>
                 </ion-list>
@@ -36,6 +48,23 @@
               </ion-item>
               <div class="ion-padding" slot="content">
                 Log In
+              </div>
+            </ion-accordion>
+            <ion-accordion value="fourth">
+              <ion-item slot="header" color="light">
+                <ion-label>Account & Settings</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-list [inset]="false">
+                  <ion-menu-toggle>
+                    <ion-item color="light" href="/account">
+                        <ion-label>Account</ion-label>
+                    </ion-item>
+                    <ion-item color="light" href="/settings">
+                        <ion-label>Settings</ion-label>
+                    </ion-item>
+                  </ion-menu-toggle>
+                </ion-list>
               </div>
             </ion-accordion>
           </ion-accordion-group>

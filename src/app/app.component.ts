@@ -10,11 +10,15 @@ export class AppComponent {
 
   menuItems = [
   {id:0, name: "Quick Care", route: "/qc"},
-  {id:1, name: "Emergency Room"},
+  {id:1, name: "Emergency Room", route: "/er"},
   {id:2, name: "Medical Centers"},
 ]
   trackItems(index:number, itemObject: any){
     return itemObject.id;
   }
+  toggleDarkTheme() {
+    document.body.classList.toggle('dark');
+  }
+  
 }
 
