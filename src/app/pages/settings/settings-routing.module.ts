@@ -5,11 +5,11 @@ import { Account } from './settings.page'
 
 const routes: Routes = [
   {
-    path: '/settings',
+    path: '',
     component: Settings,
   },
   {
-    path: '/account',
+    path: '',
     component: Account,
   },
 ];

@@ -19,6 +19,14 @@ const routes: Routes = [
     path: 'er',
     loadChildren: () => import('./pages/ER/er.module').then( m => m.ERModule)
   },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsModule)
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsModule)
+  },
 ];
 
 @NgModule({

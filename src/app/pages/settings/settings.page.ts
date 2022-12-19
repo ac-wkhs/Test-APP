@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,14 +7,52 @@ import { Component } from '@angular/core';
   styleUrls: ['settings.page.scss'],
 })
 export class Settings {
-
-QCitems = [
-  {id:0, name: "QC-Pierremont", location: "1666 E. Bert Kouns Industrial Loop Shreveport, LA 71105", route: "https://goo.gl/maps/ccKF6L983ph3AAsb6"},
-  {id:1, name: "QC-Bossier", location: "2300 Hospital Drive Bossier City, LA 71111", route:"https://goo.gl/maps/tHnqzJUxyxdhhNSG6"},
-  {id:2, name: "QC-Palmetto", location: "Benton", route:"https://goo.gl/maps/mTU9L4Ae7m782bLk7"},
-  {id:3, name: "QC-South", location: "Shreveport", route:"https://goo.gl/maps/FZy4aMgF246RTiyC7"}
-]
+ToggleEventChange(){
+  document.body.classList.toggle("dark");
+  
+  if (document.body.classList.contains("dark")){
+    this.presentToast("bottom");
+  } else{
+    this.presentToastOff("bottom");
+  }
 }
+
+constructor(private toastController: ToastController){}
+
+async presentToastOff(position: 'top' | 'middle' | 'bottom'){
+  const toast = await this.toastController.create({
+    message: 'Dark Mode Disabled',
+    duration: 1000,
+    position: position,
+    buttons: [{
+      text: "Undo",
+      role: "undo",
+      handler: () => {
+        document.body.classList.toggle("dark");
+      }
+    }]
+    });   
+
+await toast.present();
+}
+async presentToast(position: 'top' | 'middle' | 'bottom') {
+  const toast = await this.toastController.create({
+    message: 'Dark Mode Enabled',
+    duration: 1000,
+    position: position,
+    buttons: [{
+      text: "Undo",
+      role: "undo",
+      handler:() => {
+        document.body.classList.toggle("dark");
+      }
+      }
+    ]
+  });
+  await toast.present();
+}
+}
+
 export class Account{
   
 }

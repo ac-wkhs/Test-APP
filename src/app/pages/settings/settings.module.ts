@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { Settings } from './settings.page';
 
-import { SettingsRoutingModule } from './settings1.module';
+import { SettingsRoutingModule } from './settings-routing.module';
 
 
 @NgModule({
@@ -16,4 +16,4 @@ import { SettingsRoutingModule } from './settings1.module';
   ],
   declarations: [Settings]
 })
-export class ERModule {}
+export class SettingsModule {}
